@@ -31,11 +31,13 @@ export default class LoginManager {
   }
 
   constructor() {
+    console.log('LoginManager: constructor');
     this.client = Voximplant.getInstance();
     // Connection to the Voximplant Cloud is stayed alive on reloading of the app's
     // JavaScript code. Calling "disconnect" API here makes the SDK and app states
     // synchronized.
     PushManager.init();
+    this.loginWithToken();
     (async () => {
       try {
         console.log('LoginManager: constructor: disconnect');
