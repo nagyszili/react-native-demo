@@ -139,8 +139,11 @@ export default class LoginManager {
             accessToken,
         );
         const authResult = await this.client.loginWithToken(
-          username + '.voximplant.com',
+          username + '@sdk-tutorial-gxtfwf6.nagyszili.n6.voximplant.com',
           accessToken,
+        );
+        console.log(
+          'loginWithToken: authResult: ' + JSON.stringify(authResult),
         );
         await this._processLoginSuccess(authResult);
       }

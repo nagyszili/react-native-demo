@@ -27,7 +27,11 @@ class PushManager {
       if (VoipPushNotification.wakeupByPush) {
         VoipPushNotification.wakeupByPush = false;
       }
-      LoginManager.getInstance().pushNotificationReceived(notification);
+      const currentAppState = CallManager.getInstance().currentAppState;
+      console.log('PushManager: ios: currentAppState: ' + currentAppState);
+      if (currentAppState !== 'active') {
+        LoginManager.getInstance().pushNotificationReceived(notification);
+      }
     });
   }
 
