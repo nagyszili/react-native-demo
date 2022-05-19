@@ -94,8 +94,11 @@ const LoginScreen = () => {
             style={styles.forminput}
             placeholder="User password"
             secureTextEntry={true}
+            textContentType="password"
+            autoCapitalize="none"
             onChangeText={(text) => setPassword(text)}
             blurOnSubmit={true}
+            autoCorrect={false}
           />
           <TouchableOpacity onPress={() => login()} style={styles.button}>
             <Text style={styles.textButton}>LOGIN</Text>
